@@ -8,22 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <script src="script.js"></script>
+    </head>
 <body>
     <div class="bgi"></div>
     <header>
         <nav class="nav-bar">
-            <i class="fa-solid fa-bars"></i>
-            <ul>
+            <ul class="hide-on-mobile">
                 <li>Home</li>
                 <li>About</li>
                 <li>History</li>
                 <li>Gallery</li>
                 <li>Contact</li>
             </ul>
+            <div class="sideBarOpen" onclick="showSideNav()">
+            <i class="fa-solid fa-bars"></i>
+            </div>
         </nav>
         <nav class="side-nav-bar">
+            <div class="sideBarClose" onclick="closeSideNav()">
             <i class="fa-solid fa-xmark"></i>
+            </div>
             <ul>
                 <li>Home</li>
                 <li>About</li>
@@ -32,6 +37,7 @@
                 <li>Contact</li>
             </ul>
         </nav>
+        <div class="behind-sidenav" onclick="closeSideNav()"></div>
     </header>
     <main>
         <div class="hero slide-up">

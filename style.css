@@ -4,7 +4,7 @@
 }
 
 :root {
-    --color-1: #1B3C53;
+    --color-1: #1b3c53e3;
     --color-2: #456882cd;
     --color-3: #D2C1B6;
     --color-4: #F9F3EF;
@@ -45,9 +45,13 @@ body {
     top: -10vh;
 }
 
-.nav-bar i {
-    margin-left: 20px;
+.sideBarOpen {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 40px;
     display: none;
+    transition: all 1s linear;
+    opacity: 1;
 }
 
 .nav-bar ul {
@@ -64,17 +68,22 @@ body {
     position: absolute;
     height: 100vh;
     width: 175px;
-    padding: 10px 0px 0px 36px;
+    padding-top: 40px;
     background-color: var(--color-1);
+    box-shadow: 0px 0px 20px 5px black;
     top: 0;
+    left: 100%;
+    right: -100%;
     z-index: 99;
-    display: none;
+    transition: 0.8s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-.side-nav-bar i {
+.sideBarClose {
+    padding: 10px;
     color: #ffffff82;
     position: absolute;
-    left: 183px;
+    top: 0;
+    left: 0;
     font-size: 20px;
 }
 
@@ -86,10 +95,24 @@ body {
 }
 
 .side-nav-bar ul li {
+    width: 100%;
     color: white;
     list-style: none;
-    margin: 15px;
+    padding: 15px;
     font-size: 17px;
+}
+.side-nav-bar ul li:hover {
+    background-color: var(--color-2);
+}
+
+.behind-sidenav {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2e39446e;;
+    z-index: 90;
 }
 
 
@@ -97,10 +120,10 @@ body {
 
 .hero {
     height: 90vh;
-    width: 30vw;
+    width: 40vw;
     padding: 5vw;
     color: white;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     animation: hero-appearance 1.5s ease-out;
 }
 
@@ -128,11 +151,12 @@ body {
     padding: 15px;
     border-top: 2px solid var(--color-3);
     border-bottom: 2px solid var(--color-3);
-    /* border-radius: 25px; */
+    border-radius: 25px;
 }
 
 .title {
     width: 30%;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,6 +167,7 @@ body {
 }
 
 .content {
+    padding: 15px;
     width: 70%;
     color: black;
     font-size: 17px;
@@ -212,4 +237,30 @@ footer {
     color: var(--color-4);
     margin-top: 30px;
     border-top: 1px solid var(--color-3);
+}
+
+/* responsiveness */
+
+@media(max-width: 800px) {
+    .hero {
+        padding-top: 30vh;
+        padding-bottom: 0;
+        width: 80vw;
+    }
+    .options {
+        align-items: center;
+        flex-direction: column;
+    }
+    .title {
+        width: 80vw;
+    }
+    .content {
+        width: 80vw;
+    }
+    .nav-bar ul {
+        display: none;
+    }
+    .sideBarOpen {
+        display: flex;
+    }
 }
